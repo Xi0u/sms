@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accès sécurisé</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Entrez le code d'accès</h2>
+    <input type="password" id="code" placeholder="Code">
+    <br>
+    <button onclick="verifierCode()">Valider</button>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    function verifierCode() {
+      const code = document.getElementById('code').value;
+      const errorDiv = document.getElementById('error');
+
+      if (code === 'kalach') {
+        window.location.href = 'sms.png';
+      } else {
+        errorDiv.textContent = 'Code incorrect';
+      }
+    }
+  </script>
+</body>
+</html>
